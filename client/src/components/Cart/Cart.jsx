@@ -89,7 +89,7 @@ function Cart() {
    const receiptId="qwsaq1";
 
     const placeOrder = async (event) => {
-       const response =await fetch("http://localhost:8000/order",{
+       const response =await fetch("flipkart-clone-api-iota.vercel.app/order",{
         method:"POST",
         body:JSON.stringify({
             amount,
