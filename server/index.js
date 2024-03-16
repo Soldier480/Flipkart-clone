@@ -12,7 +12,7 @@ const app=express();
 dotenv.config();
 app.use(cors(
    {
-    origin : [""],
+    origin : ["flipkart-clone-frontend-five.vercel.app"],
      methods :["POST","GET"],
      credentials:true
    }
