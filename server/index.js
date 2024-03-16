@@ -11,11 +11,11 @@ const app=express();
 // const clientBuildPath = process.env.CLIENT_BUILD_PATH || '../../client/build';
 dotenv.config();
 app.use(cors(
-  // {
-  //   origin : [""],
-  //   methods :["POST","GET"],
-  //   credentials:true
-  // }
+   {
+    origin : [""],
+     methods :["POST","GET"],
+     credentials:true
+   }
 ));
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
