@@ -2,12 +2,10 @@ import RazorPay from 'razorpay';
 
 import dotenv from 'dotenv';
 
-dotenv.config();
-
 import Razorpay from 'razorpay';
 
 import { v4 as uuid } from 'uuid';
-
+dotenv.config();
 // Create a new instance of Razorpay with your API credentials
 const razorpay = new Razorpay({
     key_id:" rzp_test_QHrREagFBbjUZX",
