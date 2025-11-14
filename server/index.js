@@ -10,14 +10,34 @@ import Routes from './routes/route.js'
 const app=express();
 // const clientBuildPath = process.env.CLIENT_BUILD_PATH || '../../client/build';
 dotenv.config();
-app.use(cors(
-   {
-    origin : ["https://flipkart-clone-frontend-five.vercel.app"],
-     methods :["POST","GET"],
-     credentials:true
-   }
-));
-app.use(bodyParser.json({extended:true}));
+// Use an exact origin because your frontend sends credentials
+const CLIENT_URL = 'https://flipkart-clone-frontend-five.vercel.app';
+
+const corsOptions = {
+  origin: CLIENT_URL,              // exact origin (do NOT use '*')
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  credentials: true,               // allow cookies/credentials
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+};
+
+// Apply CORS globally
+app.use(cors(corsOptions));
+// Respond to preflight requests
+app.options('*', cors(corsOptions));
+
+// Extra safety: set the headers manually for EVERY response
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', CLIENT_URL);
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/',Routes);
 // app.use(express.static(path.join(__dirname, 'clientBuildPath')));
