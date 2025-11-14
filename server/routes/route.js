@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import { userSignUp,userLogin} from '../controller/user-controller.js';
 // import { addPaymentGateway ,paymentResponse } from '../controller/payment-controller.js';
 dotenv.config();
-
+app.use(cors());
 const router = express.Router();
 router.post('/signup', userSignUp);
 router.post('/login',userLogin);
