@@ -9,11 +9,11 @@ dotenv.config();
 
 const router = express.Router();
 router.use(cors());
+router.use(express.json());
+router.use(express.urlencoded({extended:false}));
 
 router.post('/signup', userSignUp);
 router.post('/login',userLogin);
-router.use(express.json());
-router.use(express.urlencoded({extended:false}));
 router.get('/products' ,getProducts);
 router.get('/product/:id', getProductById);
 
