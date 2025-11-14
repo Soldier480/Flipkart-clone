@@ -50,8 +50,21 @@ const PORT=8000;
 const USERNAME=process.env.DB_USERNAME;
 const PASSWORD=process.env.DB_PASSWORD;
 connection(USERNAME,PASSWORD);
-app.listen(PORT,()=>{
-  console.log(  "Server is running succesfully on port 8000");
-})
-DefaultData();
+// app.listen(PORT,()=>{
+//   console.log(  "Server is running succesfully on port 8000");
+// })
+// DefaultData();
+// Only call DefaultData() locally if you want to seed DB — be careful in production.
+// DefaultData(); // uncomment only for local/dev seeding
+
+// Export app so Vercel (serverless) can call it as a handler.
+// Do NOT call app.listen() in Vercel serverless functions.
+export default app;
+
+// When running locally (development), run with node-local.js or create a small file to call app.listen()
+// Example local runner (not for Vercel):
+// if (process.env.NODE_ENV !== 'production') {
+//   const PORT = process.env.PORT || 8000;
+//   app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+// }
 
