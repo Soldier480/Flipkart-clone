@@ -6,11 +6,12 @@ import dotenv from 'dotenv';
 import { userSignUp,userLogin} from '../controller/user-controller.js';
 // import { addPaymentGateway ,paymentResponse } from '../controller/payment-controller.js';
 dotenv.config();
-app.use(cors());
+
 const router = express.Router();
+router.use(cors());
+
 router.post('/signup', userSignUp);
 router.post('/login',userLogin);
-router.use(cors());
 router.use(express.json());
 router.use(express.urlencoded({extended:false}));
 router.get('/products' ,getProducts);
