@@ -8,7 +8,6 @@ import { userSignUp,userLogin} from '../controller/user-controller.js';
 dotenv.config();
 
 const router = express.Router();
-router.use(cors());
 router.use(express.json());
 router.use(express.urlencoded({extended:false}));
 
