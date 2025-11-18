@@ -1,6 +1,5 @@
 import React from 'react'
 import { useEffect ,useState } from 'react';
-import dotenv from 'dotenv';
 import { Box, Typography, Button, Grid, styled } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,7 +7,7 @@ import { addToCart, removeFromCart } from '../../redux/actions/cartActions.js';
 import TotalView from './TotalView';
 import EmptyCart from './EmptyCart';
 import CartItem from './CartItem';
-dotenv.config();
+
 
 // import { payUsingPaytm } from '../../service/api';
 // import { post } from '../../utils/paytm'; 
