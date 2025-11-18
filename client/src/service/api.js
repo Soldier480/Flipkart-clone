@@ -1,6 +1,6 @@
 import axios from 'axios'
   
-const url = 'https://flipkart-clone-api-iota.vercel.app'
+const url = 'http://localhost:8000';  // Base URL of the backend server
 
 export const authenticateSignup = async (data) => {
     try {

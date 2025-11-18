@@ -6,10 +6,12 @@ import Razorpay from 'razorpay';
 
 import { v4 as uuid } from 'uuid';
 dotenv.config();
+const razorpay_key_id = process.env.RAZORPAY_KEY_ID;
+const razorpay_secret_key = process.env.RAZORPAY_SECRET_KEY
 // Create a new instance of Razorpay with your API credentials
 const razorpay = new Razorpay({
-    key_id:" rzp_test_QHrREagFBbjUZX",
-    key_secret: "KcDvqyEsyMVsN5k28Dn1YR57",
+    key_id: razorpay_key_id,
+    key_secret: razorpay_secret_key,
 });
 
 export const addPaymentGateway = async (req, res) => {

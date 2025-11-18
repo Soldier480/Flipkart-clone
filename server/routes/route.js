@@ -1,6 +1,5 @@
 import express from  'express';
 import { getProducts ,getProductById} from '../controller/product-controller.js';
-import cors from "cors";
 import Razorpay from "razorpay";
 import dotenv from 'dotenv';
 import { userSignUp,userLogin} from '../controller/user-controller.js';

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 
  export const connection =async(username,password)=>{
-    const URL=`mongodb+srv://${username}:${password}@test.udm4xrw.mongodb.net/?retryWrites=true&w=majority`;
+    const URL=`mongodb+srv://${username}:${password}@todolist.udm4xrw.mongodb.net/?appName=ToDoList`;
     try{
     await mongoose.connect(URL,{useUnifiedTopology:true,useNewUrlParser:true});
     console.log("Database connected succesfully")
@@ -12,3 +12,4 @@ import mongoose from 'mongoose';
  }
 
  export default connection;
+//  `mongodb+srv://${username}:${password}@todolist.udm4xrw.mongodb.net/?appName=ToDoList`

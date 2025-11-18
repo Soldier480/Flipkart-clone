@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as actionTypes from '../constants/productConstant.js'
-const URL="https://flipkart-clone-api-iota.vercel.app";
+const URL="http://localhost:8000";
 
 
   export const getProducts =()=> async (dispatch) => {//syntax to pass to middleware
