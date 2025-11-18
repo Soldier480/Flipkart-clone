@@ -29,8 +29,6 @@ const RightContainer = styled(Grid)`
 
 function DetailView() {
   
-  
-
 
   const dispatch=useDispatch();
   const {id}=useParams();

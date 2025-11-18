@@ -1,18 +1,14 @@
 import React from 'react'
-
 import { useEffect ,useState } from 'react';
-
+import dotenv from 'dotenv';
 import { Box, Typography, Button, Grid, styled } from '@mui/material';
 import { useParams } from 'react-router-dom';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions.js';
-
 import TotalView from './TotalView';
 import EmptyCart from './EmptyCart';
 import CartItem from './CartItem';
-
-import axios  from 'axios';
+dotenv.config();
 
 // import { payUsingPaytm } from '../../service/api';
 // import { post } from '../../utils/paytm'; 
@@ -105,7 +101,7 @@ function Cart() {
        console.log(order);
 
        var options = {
-        "key": "rzp_test_QHrREagFBbjUZX", // Enter the Key ID generated from the Dashboard
+        "key": process.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
         amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         currency,
         "name": "Acme Corp", //your business name
