@@ -12,7 +12,6 @@ const app=express();
 dotenv.config();
 
 
-
 // Apply CORS globally
 app.use(cors());
 
