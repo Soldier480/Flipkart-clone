@@ -37,7 +37,7 @@ function ProductDetail({product}) {
     <Typography>{product.title.longTitle}</Typography>
                         <Typography style={{marginTop: 5, color: '#878787', fontSize: 14 }}>
                             8 Ratings & 1 Reviews
-                            <span><img src={fassured} style={{width: 77, marginLeft: 20}} /></span>
+                            <span><img alt="error loading" src={fassured} style={{width: 77, marginLeft: 20}} /></span>
                         </Typography>
                         <Typography>
                             <span style={{ fontSize: 28 }}>₹{product.price.cost}</span>&nbsp;&nbsp;&nbsp; 
@@ -72,7 +72,7 @@ function ProductDetail({product}) {
                     </ColumnText>
                     <TableRow>
                         <TableCell colSpan={2}>
-                            <img src={adURL} style={{ width: 390 }} />
+                            <img src={adURL} alt="error loading" style={{ width: 390 }} />
                         </TableCell>
                     </TableRow>
                     <ColumnText>

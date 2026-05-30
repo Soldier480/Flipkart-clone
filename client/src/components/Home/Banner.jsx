@@ -1,4 +1,3 @@
-
 import Carousel from "react-multi-carousel";
 import {styled} from '@mui/material'
 import { bannerData } from "../../constants/data";

@@ -1,4 +1,3 @@
-
 import {products} from './constants/data.js'
 import Product from "./model/products-schema.js"
 

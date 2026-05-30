@@ -1,7 +1,6 @@
 import User from '../model/user-schema.js'
 
 
-
 export const userSignUp = async (request, response) => {
     try {
         const exist = await User.findOne({ username: request.body.username });

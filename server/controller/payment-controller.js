@@ -1,10 +1,8 @@
 import RazorPay from 'razorpay';
-
 import dotenv from 'dotenv';
-
 import Razorpay from 'razorpay';
-
 import { v4 as uuid } from 'uuid';
+
 dotenv.config();
 const razorpay_key_id = process.env.RAZORPAY_KEY_ID;
 const razorpay_secret_key = process.env.RAZORPAY_SECRET_KEY

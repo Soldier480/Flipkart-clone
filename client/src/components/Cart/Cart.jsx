@@ -3,7 +3,7 @@ import { useEffect ,useState } from 'react';
 import { Box, Typography, Button, Grid, styled } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from '../../redux/actions/cartActions.js';
+import { addToCart } from '../../redux/actions/cartActions.js';
 import TotalView from './TotalView';
 import EmptyCart from './EmptyCart';
 import CartItem from './CartItem';
@@ -63,15 +63,15 @@ function Cart() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (cartItems && id !== cartItems.id)
+        if (cartItems && id !== cartItems.id){
             dispatch(addToCart(id));
             totalAmount();
-
+        }
     }, [dispatch, cartItems, id]);
 
     const totalAmount = () => {
         let price = 0, discount = 0;
-      cartItems &&  cartItems.map(item => {
+      cartItems.forEach(item => {
             price += item.price.mrp
             discount += (item.price.mrp - item.price.cost) 
         })
@@ -82,9 +82,10 @@ function Cart() {
    const amount =5000;
    const currency="INR";
    const receiptId="qwsaq1";
-
+   console.log(totalOrderAmmount);
+   
     const placeOrder = async (event) => {
-       const response =await fetch("https://flipkart-clone-api-iota.vercel.app/order",{
+       const response =await fetch("http://localhost:8000/order",{
         method:"POST",
         body:JSON.stringify({
             amount,
@@ -160,8 +161,6 @@ function Cart() {
         }
         </>
     );
-
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 }
 export default Cart

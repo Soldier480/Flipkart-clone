@@ -3,7 +3,6 @@ import { Card, Box, Typography, Button, styled } from '@mui/material';
 import {removeFromCart} from "../../redux/actions/cartActions";
 import { addEllipsis } from '../../utils/common-utils.js';
 import GroupButton from './ButtonGroup.jsx';
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 const Component = styled(Card)`
@@ -54,13 +53,13 @@ const CartItem = ({ item }) => {
     return (
         <Component>
             <LeftComponent>
-                <img src={item.url} style={{ height: 110, width: 110 }} />
+                <img src={item.url} alt="error loading" style={{ height: 110, width: 110 }} />
                 <GroupButton />
             </LeftComponent>
             <Box style={{ margin: 20 }}>
                 <Typography>{addEllipsis(item.title.longTitle)}</Typography>
                 <SmallText>Seller:RetailNet
-                    <span><img src={fassured} style={{ width: 50, marginLeft: 10 }} /></span>
+                    <span><img src={fassured} alt="error loading" style={{ width: 50, marginLeft: 10 }} /></span>
                 </SmallText>
                 <Typography style={{margin: '20px 0'}}>
                     <Cost component="span">₹{item.price.cost}</Cost>&nbsp;&nbsp;&nbsp;
